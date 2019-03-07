@@ -1,7 +1,7 @@
-###s######################################################################################################
+#########################################################################################################
 # Id            : 4 ML - product_classifier.py          
 # Type          : Util
-# Tests         : 
+# Tests         : test_product_classifier.py 
 # Description   : Util to preprocess product classifier data and create machine learning model
 #########################################################################################################
 
@@ -45,6 +45,7 @@ def read_data( filename, sep=";" ):
     return pd.read_csv( filename, sep=sep )
 
 def analyze_model( df ):
+    '''Compares various model and provides visualization on their performance'''
     X       = df[ 'product_decription' ].ravel()
     y       = df[ 'productgroup' ].ravel()
     
@@ -76,7 +77,7 @@ def analyze_model( df ):
     print cv_df.groupby('model_name').accuracy.mean()
     
 def build_model( df ):
-    ''' Build the selected Model - LinerSVC'''
+    ''' Build the selected Model - LinearSVC'''
     lsvc        =  Pipeline([('vect',  CountVectorizer()), 
                     ('tfidf',   TfidfTransformer()), 
                     ('clf',     LinearSVC()),

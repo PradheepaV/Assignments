@@ -2,6 +2,7 @@ Procedure to run the model
 ======================
 
 1. Add __init__.py to create module. The file could not be uploaded here as its an empty file.
+2. Point PARENT_DIR in product_classifier to your folder. 
 2. Run product_classifier -
 	This shows the performance of various models
 	and persists Linear SVC model

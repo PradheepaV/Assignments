@@ -1,5 +1,5 @@
 Procedure to run the model
-======================
+============================
 
 1. Point PARENT_DIR in product_classifier to your folder. 
 2. Run product_classifier -
@@ -13,3 +13,25 @@ Procedure to run the model
 Model Performance stats
 =========================
 ![Screenshot](ProductClassModelCompare.png)
+
+Accuracy Stats
+===============
+LinearSVC                 0.994375
+LogisticRegression        0.994250
+MultinomialNB             0.984375
+RandomForestClassifier    0.902625
+SGDClassifier             0.992000
+
+LinearSVC  with 5 fold CV- Test Accuracy and classification_report
+===================================================================
+accuracy 0.9925
+                 precision    recall  f1-score   support
+
+       BICYCLES       1.00      0.99      1.00       389
+ CONTACT LENSES       1.00      0.99      0.99       419
+     USB MEMORY       1.00      0.99      1.00       393
+WASHINGMACHINES       0.97      1.00      0.99       399
+
+      micro avg       0.99      0.99      0.99      1600
+      macro avg       0.99      0.99      0.99      1600
+   weighted avg       0.99      0.99      0.99      1600

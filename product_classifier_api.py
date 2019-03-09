@@ -1,7 +1,7 @@
 ###s######################################################################################################
-# Id            : 4 ML - product_classifier_api.py          
+# Id            : V1.0 4 - product_classifier_api.py          
 # Type          : Util
-# Tests         : 
+# Tests         : None
 # Description   : Util to host REST API for product_classifier
 #########################################################################################################
  
@@ -27,8 +27,7 @@ def make_prediction():
     data = json.dumps( request.get_json(force=True) )
     # create pandas dataframe using json string
     df = pd.read_json( data )
-    product_decriptions = df[ 'product_decription' ].ravel()
-    #actuals = df['productgroup'].ravel()    
+    product_decriptions = df[ 'product_decription' ].ravel()      
     X = df[ 'product_decription' ]
     # make predictions
     predictions = model.predict( X )

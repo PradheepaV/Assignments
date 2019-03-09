@@ -9,3 +9,7 @@ Procedure to run the model
 	This will bring up the server and run from port 10001
 4. Use make_api_request -
 	This will pass in various production descriptions, for which the product category is predicted and returned in the response.
+
+Model Performance stats
+=========================
+![alt text](https://github.com/PradheepaV/ProductClassifier/blob/master/ProductClassModelCompare.png)

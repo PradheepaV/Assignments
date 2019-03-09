@@ -12,4 +12,4 @@ Procedure to run the model
 
 Model Performance stats
 =========================
-![alt text](https://github.com/PradheepaV/ProductClassifier/blob/master/ProductClassModelCompare.png)
+![Screenshot](ProductClassModelCompare.png)

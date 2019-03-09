@@ -1,7 +1,7 @@
-#########################################################################################################
+###s######################################################################################################
 # Id            : 4 ML - product_classifier.py          
 # Type          : Util
-# Tests         : test_product_classifier.py 
+# Tests         : 
 # Description   : Util to preprocess product classifier data and create machine learning model
 #########################################################################################################
 
@@ -20,7 +20,7 @@ import pickle
 import os
 import seaborn as sns
 
-PARENT_DIR      = "C:\\Users\\admin\\Desktop\\GfK\\ProductClassification"
+PARENT_DIR      = "."
 MODEL_NAME      = "clf_model.pkl"
 TESTSET_FILE    = "testset_C.csv"
 CV              = 5
@@ -45,7 +45,7 @@ def read_data( filename, sep=";" ):
     return pd.read_csv( filename, sep=sep )
 
 def analyze_model( df ):
-    '''Compares various model and provides visualization on their performance'''
+    ''' Build various model and produce their performance statistics for analysis'''
     X       = df[ 'product_decription' ].ravel()
     y       = df[ 'productgroup' ].ravel()
     

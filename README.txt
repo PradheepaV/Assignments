@@ -1,11 +1,10 @@
 Procedure to run the model
 ======================
 
-1. Add __init__.py to create module. The file could not be uploaded here as its an empty file.
-2. Point PARENT_DIR in product_classifier to your folder. 
+1. Point PARENT_DIR in product_classifier to your folder. 
 2. Run product_classifier -
 	This shows the performance of various models
-	and persists Linear SVC model
+	and persists Linear SVC model which gave the best performance
 3. Run product_classifier_api - 
 	This will bring up the server and run from port 10001
 4. Use make_api_request -

@@ -1,5 +1,5 @@
 ###s######################################################################################################
-# Id            : 4 ML - make_api_requests.py          
+# Id            : V1.0 4 - make_api_requests.py          
 # Type          : Util
 # Tests         : None
 # Description   : Module to make API requests
@@ -16,5 +16,5 @@ def make_api_request(data):
     print r.text
     return r.text
     
-product_decriptions = { 'product_decription': ['32gb','SIEMENS','Clothes','Soft','Transcend'] }
+product_decriptions = { 'product_decription': ['32gb','SIEMENS','Clothes','Soft','Transcend',"color","Augen","pen drive","soap","water","Bild","Fahrzeug"] }
 make_api_request( product_decriptions )

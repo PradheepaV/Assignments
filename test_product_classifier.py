@@ -1,29 +1,18 @@
 ###s######################################################################################################
-# Id            : 4 ML - test_product_classifier.py          
+# Id            : V1.0 4 ML - test_product_classifier.py          
 # Type          : Util
 # Tests         : 
-# Description   : Util to preprocess product classifier data and create machine learning model
+# Description   : Util to test product_classifier
 #########################################################################################################
 
-
-from sklearn.model_selection import cross_val_score, GridSearchCV, train_test_split
-from sklearn.pipeline import Pipeline
-from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
-from sklearn.metrics import classification_report, confusion_matrix,accuracy_score
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.linear_model import LogisticRegression, SGDClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import LinearSVC
-import matplotlib.pyplot as plt
 import pandas as pd
 import pickle
 import os
-import seaborn as sns
-
 import unittest
-
 from product_classifier import PARENT_DIR, MODEL_NAME, TESTSET_FILE, CV, \
-    process_data, merge_columns, read_data, persist_model
+    process_data, merge_columns, read_data, persist_model, analyze_model, build_model
+from mock import patch
+import matplotlib.pyplot
 
 class ProductClassifierTests(unittest.TestCase): 
 
@@ -42,6 +31,16 @@ class ProductClassifierTests(unittest.TestCase):
     def test_persist_model( self ):
         persist_model( self.df, modelName="Dummy" )#filename to be datetime stamped to be unique everytime
         self.assertTrue( os.path.isfile(os.path.join( PARENT_DIR, "Dummy" )) )
+    
+    @patch('matplotlib.pyplot.show')
+    def test_analyze_model( self, patch_plt ):
+        ''' Ensure it runs without any error'''
+        analyze_model( process_data(self.df) )    
+    
+    def test_build_model( self ):
+        '''Ensure it runs without any error'''
+        build_model( process_data(self.df) )
 
+        
 if __name__ == '__main__':    
     unittest.main()

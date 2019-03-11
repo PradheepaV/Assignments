@@ -1,4 +1,4 @@
-Product Classifier Model Performance Stats
+Product Classifier Model Performance Stats(Box plot for 5 fold CV)
 ============================================
 ![Screenshot](ProductClassModelCompare.png)
 
